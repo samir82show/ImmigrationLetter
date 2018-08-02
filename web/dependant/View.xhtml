@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewDependantTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewDependantLabel_qid}"/>
+                    <h:outputText value="#{dependantController.selected.qid}" title="#{bundle.ViewDependantTitle_qid}"/>
+                    <h:outputText value="#{bundle.ViewDependantLabel_name}"/>
+                    <h:outputText value="#{dependantController.selected.name}" title="#{bundle.ViewDependantTitle_name}"/>
+                    <h:outputText value="#{bundle.ViewDependantLabel_DOB}"/>
+                    <h:outputText value="#{dependantController.selected.DOB}" title="#{bundle.ViewDependantTitle_DOB}"/>
+                    <h:outputText value="#{bundle.ViewDependantLabel_IDExpiry}"/>
+                    <h:outputText value="#{dependantController.selected.IDExpiry}" title="#{bundle.ViewDependantTitle_IDExpiry}"/>
+                    <h:outputText value="#{bundle.ViewDependantLabel_nationality}"/>
+                    <h:outputText value="#{dependantController.selected.nationality}" title="#{bundle.ViewDependantTitle_nationality}"/>
+                    <h:outputText value="#{bundle.ViewDependantLabel_occupation}"/>
+                    <h:outputText value="#{dependantController.selected.occupation}" title="#{bundle.ViewDependantTitle_occupation}"/>
+                    <h:outputText value="#{bundle.ViewDependantLabel_passportNo}"/>
+                    <h:outputText value="#{dependantController.selected.passportNo}" title="#{bundle.ViewDependantTitle_passportNo}"/>
+                    <h:outputText value="#{bundle.ViewDependantLabel_passportExpiry}"/>
+                    <h:outputText value="#{dependantController.selected.passportExpiry}" title="#{bundle.ViewDependantTitle_passportExpiry}"/>
+                    <h:outputText value="#{bundle.ViewDependantLabel_residencyType}"/>
+                    <h:outputText value="#{dependantController.selected.residencyType}" title="#{bundle.ViewDependantTitle_residencyType}"/>
+                    <h:outputText value="#{bundle.ViewDependantLabel_myHost}"/>
+                    <h:outputText value="#{dependantController.selected.myHost}" title="#{bundle.ViewDependantTitle_myHost}"/>
+                    <h:outputText value="#{bundle.ViewDependantLabel_employee}"/>
+                    <h:outputText value="#{dependantController.selected.employee}" title="#{bundle.ViewDependantTitle_employee}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{dependantController.destroyAndView}" value="#{bundle.ViewDependantDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewDependantEditLink}"/>
+                <br />
+                <h:commandLink action="#{dependantController.prepareCreate}" value="#{bundle.ViewDependantCreateLink}" />
+                <br />
+                <h:commandLink action="#{dependantController.prepareList}" value="#{bundle.ViewDependantShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewDependantIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

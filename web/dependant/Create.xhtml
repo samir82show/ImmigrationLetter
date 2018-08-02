@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateDependantTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateDependantLabel_qid}" for="qid" />
+                    <h:inputText id="qid" value="#{dependantController.selected.qid}" title="#{bundle.CreateDependantTitle_qid}" />
+                    <h:outputLabel value="#{bundle.CreateDependantLabel_name}" for="name" />
+                    <h:inputText id="name" value="#{dependantController.selected.name}" title="#{bundle.CreateDependantTitle_name}" />
+                    <h:outputLabel value="#{bundle.CreateDependantLabel_DOB}" for="DOB" />
+                    <h:inputText id="DOB" value="#{dependantController.selected.DOB}" title="#{bundle.CreateDependantTitle_DOB}">
+                        <f:convertDateTime pattern="d/M/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateDependantLabel_IDExpiry}" for="IDExpiry" />
+                    <h:inputText id="IDExpiry" value="#{dependantController.selected.IDExpiry}" title="#{bundle.CreateDependantTitle_IDExpiry}">
+                        <f:convertDateTime pattern="d/M/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateDependantLabel_nationality}" for="nationality" />
+                    <h:inputText id="nationality" value="#{dependantController.selected.nationality}" title="#{bundle.CreateDependantTitle_nationality}" />
+                    <h:outputLabel value="#{bundle.CreateDependantLabel_occupation}" for="occupation" />
+                    <h:inputText id="occupation" value="#{dependantController.selected.occupation}" title="#{bundle.CreateDependantTitle_occupation}" />
+                    <h:outputLabel value="#{bundle.CreateDependantLabel_passportNo}" for="passportNo" />
+                    <h:inputText id="passportNo" value="#{dependantController.selected.passportNo}" title="#{bundle.CreateDependantTitle_passportNo}" />
+                    <h:outputLabel value="#{bundle.CreateDependantLabel_passportExpiry}" for="passportExpiry" />
+                    <h:inputText id="passportExpiry" value="#{dependantController.selected.passportExpiry}" title="#{bundle.CreateDependantTitle_passportExpiry}">
+                        <f:convertDateTime pattern="d/M/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateDependantLabel_residencyType}" for="residencyType" />
+                    <h:inputText id="residencyType" value="#{dependantController.selected.residencyType}" title="#{bundle.CreateDependantTitle_residencyType}" />
+                    <h:outputLabel value="#{bundle.CreateDependantLabel_myHost}" for="myHost" />
+                    <h:inputText id="myHost" value="#{dependantController.selected.myHost}" title="#{bundle.CreateDependantTitle_myHost}" />
+                    <h:outputLabel value="#{bundle.CreateDependantLabel_employee}" for="employee" />
+                    <h:selectOneMenu id="employee" value="#{dependantController.selected.employee}" title="#{bundle.CreateDependantTitle_employee}" >
+                        <f:selectItems value="#{employeeController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{dependantController.create}" value="#{bundle.CreateDependantSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{dependantController.prepareList}" value="#{bundle.CreateDependantShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateDependantIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

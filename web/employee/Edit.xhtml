@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditEmployeeTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditEmployeeLabel_qid}" for="qid" />
+                    <h:inputText id="qid" value="#{employeeController.selected.qid}" title="#{bundle.EditEmployeeTitle_qid}" />
+                    <h:outputLabel value="#{bundle.EditEmployeeLabel_name}" for="name" />
+                    <h:inputText id="name" value="#{employeeController.selected.name}" title="#{bundle.EditEmployeeTitle_name}" />
+                    <h:outputLabel value="#{bundle.EditEmployeeLabel_nationality}" for="nationality" />
+                    <h:inputText id="nationality" value="#{employeeController.selected.nationality}" title="#{bundle.EditEmployeeTitle_nationality}" />
+                    <h:outputLabel value="#{bundle.EditEmployeeLabel_DOB}" for="DOB" />
+                    <h:inputText id="DOB" value="#{employeeController.selected.DOB}" title="#{bundle.EditEmployeeTitle_DOB}">
+                        <f:convertDateTime pattern="d/M/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditEmployeeLabel_maritalStatus}" for="maritalStatus" />
+                    <h:inputText id="maritalStatus" value="#{employeeController.selected.maritalStatus}" title="#{bundle.EditEmployeeTitle_maritalStatus}" />
+                    <h:outputLabel value="#{bundle.EditEmployeeLabel_telephone}" for="telephone" />
+                    <h:inputText id="telephone" value="#{employeeController.selected.telephone}" title="#{bundle.EditEmployeeTitle_telephone}" />
+                    <h:outputLabel value="#{bundle.EditEmployeeLabel_passportNo}" for="passportNo" />
+                    <h:inputText id="passportNo" value="#{employeeController.selected.passportNo}" title="#{bundle.EditEmployeeTitle_passportNo}" />
+                    <h:outputLabel value="#{bundle.EditEmployeeLabel_passportExpiry}" for="passportExpiry" />
+                    <h:inputText id="passportExpiry" value="#{employeeController.selected.passportExpiry}" title="#{bundle.EditEmployeeTitle_passportExpiry}">
+                        <f:convertDateTime pattern="d/M/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditEmployeeLabel_residencyType}" for="residencyType" />
+                    <h:inputText id="residencyType" value="#{employeeController.selected.residencyType}" title="#{bundle.EditEmployeeTitle_residencyType}" />
+                    <h:outputLabel value="#{bundle.EditEmployeeLabel_employer}" for="employer" />
+                    <h:inputText id="employer" value="#{employeeController.selected.employer}" title="#{bundle.EditEmployeeTitle_employer}" />
+                    <h:outputLabel value="#{bundle.EditEmployeeLabel_occupation}" for="occupation" />
+                    <h:inputText id="occupation" value="#{employeeController.selected.occupation}" title="#{bundle.EditEmployeeTitle_occupation}" />
+                    <h:outputLabel value="#{bundle.EditEmployeeLabel_IDExpiry}" for="IDExpiry" />
+                    <h:inputText id="IDExpiry" value="#{employeeController.selected.IDExpiry}" title="#{bundle.EditEmployeeTitle_IDExpiry}">
+                        <f:convertDateTime pattern="d/M/yyyy" />
+                    </h:inputText>
+                </h:panelGrid>
+                <h:commandLink action="#{employeeController.update}" value="#{bundle.EditEmployeeSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditEmployeeViewLink}"/>
+                <br />
+                <h:commandLink action="#{employeeController.prepareList}" value="#{bundle.EditEmployeeShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditEmployeeIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

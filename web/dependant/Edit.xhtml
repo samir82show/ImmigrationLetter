@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditDependantTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditDependantLabel_qid}" for="qid" />
+                    <h:inputText id="qid" value="#{dependantController.selected.qid}" title="#{bundle.EditDependantTitle_qid}" />
+                    <h:outputLabel value="#{bundle.EditDependantLabel_name}" for="name" />
+                    <h:inputText id="name" value="#{dependantController.selected.name}" title="#{bundle.EditDependantTitle_name}" />
+                    <h:outputLabel value="#{bundle.EditDependantLabel_DOB}" for="DOB" />
+                    <h:inputText id="DOB" value="#{dependantController.selected.DOB}" title="#{bundle.EditDependantTitle_DOB}" />
+                    <h:outputLabel value="#{bundle.EditDependantLabel_IDExpiry}" for="IDExpiry" />
+                    <h:inputText id="IDExpiry" value="#{dependantController.selected.IDExpiry}" title="#{bundle.EditDependantTitle_IDExpiry}" />
+                    <h:outputLabel value="#{bundle.EditDependantLabel_nationality}" for="nationality" />
+                    <h:inputText id="nationality" value="#{dependantController.selected.nationality}" title="#{bundle.EditDependantTitle_nationality}" />
+                    <h:outputLabel value="#{bundle.EditDependantLabel_occupation}" for="occupation" />
+                    <h:inputText id="occupation" value="#{dependantController.selected.occupation}" title="#{bundle.EditDependantTitle_occupation}" />
+                    <h:outputLabel value="#{bundle.EditDependantLabel_passportNo}" for="passportNo" />
+                    <h:inputText id="passportNo" value="#{dependantController.selected.passportNo}" title="#{bundle.EditDependantTitle_passportNo}" />
+                    <h:outputLabel value="#{bundle.EditDependantLabel_passportExpiry}" for="passportExpiry" />
+                    <h:inputText id="passportExpiry" value="#{dependantController.selected.passportExpiry}" title="#{bundle.EditDependantTitle_passportExpiry}" />
+                    <h:outputLabel value="#{bundle.EditDependantLabel_residencyType}" for="residencyType" />
+                    <h:inputText id="residencyType" value="#{dependantController.selected.residencyType}" title="#{bundle.EditDependantTitle_residencyType}" />
+                    <h:outputLabel value="#{bundle.EditDependantLabel_myHost}" for="myHost" />
+                    <h:inputText id="myHost" value="#{dependantController.selected.myHost}" title="#{bundle.EditDependantTitle_myHost}" />
+                    <h:outputLabel value="#{bundle.EditDependantLabel_employee}" for="employee" />
+                    <h:selectOneMenu id="employee" value="#{dependantController.selected.employee}" title="#{bundle.EditDependantTitle_employee}" >
+                        <f:selectItems value="#{employeeController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{dependantController.update}" value="#{bundle.EditDependantSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditDependantViewLink}"/>
+                <br />
+                <h:commandLink action="#{dependantController.prepareList}" value="#{bundle.EditDependantShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditDependantIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

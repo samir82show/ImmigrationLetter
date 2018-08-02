@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" ptype="MONOLITH" ppkg="entity" epkg="domain" v="4.8.2" rws="_15313087788402" Pws="_15313087788402" cws="_15313087788402" persistenceUnitName="ImmigrationLetterPU" sm="false" xs="false" id="_15313087788401" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
+    <jpa:entity compositePrimaryKeyClass="EmployeePK" abs="false" class="Employee" v="true" jbn="false" xre="false" m="false" rootElement="_15313087788401" id="_15313087839733">
+        <jpa:ath>sawad</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="Name" id="_153130921319514">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="Nationality" id="_153130926424515">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="java.sql.Date" v="true" xvt="" name="DOB" id="_153130928729317">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="MaritalStatus" id="_153130936950918">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="Telephone" id="_153130938087019">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="PassportNo" id="_153130998362923">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="java.sql.Date" v="true" xvt="" name="PassportExpiry" id="_153130999222124">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="ResidencyType" id="_153131003776725">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="Employer" id="_153131004830326">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="Occupation" id="_153131017770429">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="IDExpiry" id="_153180828889221"/>
+            <jpa:one-to-many orp="false" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_15313088046426" connected-attribute-id="_153130885199710" v="true" xvt="" name="dependants" id="_153130885201211">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:one-to-many>
+            <jpa:id attribute-type="String" v="true" xvt="" name="qid" id="_15313087840204">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Employee.findAll">
+            <jpa:query>Select e from Employee e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Employee.findByQid">
+            <jpa:query>Select e from Employee e where e.qid=:qid</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Employee.findByNationality">
+            <jpa:query>Select e from Employee e where e.Nationality=:Nationality</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Employee.findByName">
+            <jpa:query>Select e from Employee e where e.Name=:Name</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Employee.findByNationality">
+            <jpa:query>Select e from Employee e where e.Nationality=:Nationality</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Employee.findByOccupation">
+            <jpa:query>Select e from Employee e where e.Occupation=:Occupation</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Employee.findByDOB">
+            <jpa:query>Select e from Employee e where e.DOB=:DOB</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Employee.findByMaritalStatus">
+            <jpa:query>Select e from Employee e where e.MaritalStatus=:MaritalStatus</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Employee.findByTelephone">
+            <jpa:query>Select e from Employee e where e.Telephone=:Telephone</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Employee.findByPassportNo">
+            <jpa:query>Select e from Employee e where e.PassportNo=:PassportNo</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Employee.findByPassportExpiry">
+            <jpa:query>Select e from Employee e where e.PassportExpiry=:PassportExpiry</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Employee.findByResidencyType">
+            <jpa:query>Select e from Employee e where e.ResidencyType=:ResidencyType</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Employee.findByEmployer">
+            <jpa:query>Select e from Employee e where e.Employer=:Employer</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Employee.findByOccupation">
+            <jpa:query>Select e from Employee e where e.Occupation=:Occupation</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Employee.findByIDExpiry">
+            <jpa:query>Select e from Employee e where e.IDExpiry=:IDExpiry</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="DependantPK" abs="false" class="Dependant" v="true" jbn="false" xre="false" m="false" rootElement="_15313087788401" id="_15313088046426">
+        <jpa:ath>sawad</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="Name" id="_153130978508220">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="DOB" id="_153130985780321">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="IDExpiry" id="_153130987300322">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="Nationality" id="_153131013455327">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="Occupation" id="_153131016372928">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="PassportNo" id="_153131019067230">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="PassportExpiry" id="_153131019891931">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="ResidencyType" id="_153131021966432">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="Host" id="_153131023620933">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:many-to-one optional="true" primaryKey="false" connected-entity-id="_15313087839733" connected-attribute-id="_153130885201211" v="true" xvt="" name="employee" id="_153130885199710">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:many-to-one>
+            <jpa:id attribute-type="String" v="true" xvt="" name="qid" id="_15313088046427">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Dependant.findAll">
+            <jpa:query>Select e from Dependant e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Dependant.findByName">
+            <jpa:query>Select d from Dependant d where d.Name=:Name</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Dependant.findByDOB">
+            <jpa:query>Select d from Dependant d where d.DOB=:DOB</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Dependant.findByIDExpiry">
+            <jpa:query>Select d from Dependant d where d.IDExpiry=:IDExpiry</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Dependant.findByNationality">
+            <jpa:query>Select d from Dependant d where d.Nationality=:Nationality</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Dependant.findByOccupation">
+            <jpa:query>Select d from Dependant d where d.Occupation=:Occupation</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Dependant.findByPassportNo">
+            <jpa:query>Select d from Dependant d where d.PassportNo=:PassportNo</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Dependant.findByPassportExpiry">
+            <jpa:query>Select d from Dependant d where d.PassportExpiry=:PassportExpiry</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Dependant.findByResidencyType">
+            <jpa:query>Select d from Dependant d where d.ResidencyType=:ResidencyType</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Dependant.findByHost">
+            <jpa:query>Select d from Dependant d where d.Host=:Host</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:snp loc="BEFORE_PACKAGE" e="true">/**
+ * This file was generated by the Jeddict
+ */</jpa:snp>
+    <jpa:wsl>
+        <jpa:ws n="Main" id="_15313087788402">
+            <i ref="_15313088046426" x="705" y="206"/>
+            <i ref="_15313087839733" x="426" y="206"/>
+        </jpa:ws>
+    </jpa:wsl>
+</jpa:entity-mappings>
